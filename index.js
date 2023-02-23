@@ -5,11 +5,12 @@ const port = 4000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static("public"));
 
 let luckyPlayerData = [];
 
 app.get("/", (req, res) => {
-  res.sendFile("/home.html", { root: __dirname });
+  res.sendFile("home.html", { root: path.join(__dirname, "public") });
 });
 
 app.get("/data", (req, res) => {
