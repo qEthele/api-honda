@@ -1,23 +1,21 @@
 const express = require("express");
-const cors = require("cors");
 const app = express();
 const port = 4000;
 
-app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
 let luckyPlayerData = [];
 
 app.get("/", (req, res) => {
-  res.sendFile("home.html", { root: path.join(__dirname, "public") });
+  res.send("Server is running");
 });
 
 app.get("/data", (req, res) => {
   res.send(luckyPlayerData);
 });
 app.get("/showData", (req, res) => {
-  res.sendFile("showData.html", { root: path.join(__dirname, "public") });
+  res.sendFile("index.html", { root: path.join(__dirname, "public") });
 });
 
 app.get("/resetAllData", (req, res) => {
@@ -45,5 +43,4 @@ app.post("/mydata", (req, res) => {
 app.listen(process.env.PORT || { port }, () => {
   console.log(`Server is running on port ${port}`);
 });
-
 module.exports = app;
