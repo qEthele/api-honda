@@ -13,9 +13,6 @@ app.get("/", (req, res) => {
 app.get("/data", (req, res) => {
   res.send(luckyPlayerData);
 });
-app.get("/showData", (req, res) => {
-  res.sendFile("index.html", { root: path.join(__dirname, "public") });
-});
 
 app.get("/resetAllData", (req, res) => {
   luckyPlayerData = [];
