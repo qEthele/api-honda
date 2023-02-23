@@ -21,6 +21,18 @@ app.get("/resetAllData", (req, res) => {
   res.send("Reset All Data !!!");
 });
 
+app.post("/login", (req, res) => {
+  console.log(req.body);
+
+  if (req.body.username === "admin" && req.body.password === "qwerty123456") {
+    const data = true;
+    res.send(data);
+  } else {
+    const data = false;
+    res.send(data);
+  }
+});
+
 app.post("/mydata", (req, res) => {
   console.log(luckyPlayerData.length);
   if (req.body.status === 1) {
