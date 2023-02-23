@@ -9,7 +9,7 @@ app.use(express.json());
 let luckyPlayerData = [];
 
 app.get("/", (req, res) => {
-  res.sendFile("/home.html", { root: __dirname });
+  res.sendFile("/home.html");
 });
 
 app.get("/data", (req, res) => {
