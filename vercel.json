@@ -1,0 +1,15 @@
+{
+    "version" : 2,
+    "build" : [
+        {
+            "src" : "Index.jsx",
+            "use" : "@now/node"
+        }
+    ],
+    "routes" : [
+        {
+            "src" : "/(.*)",
+            "dest" : "Index.jsx"
+        }
+    ]
+}
