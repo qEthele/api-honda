@@ -17,7 +17,7 @@ app.get("/data", (req, res) => {
   res.send(luckyPlayerData);
 });
 app.get("/showData", (req, res) => {
-  res.sendFile("/showData.html", { root: __dirname });
+  res.sendFile("showData.html", { root: path.join(__dirname, "public") });
 });
 
 app.get("/resetAllData", (req, res) => {
@@ -42,6 +42,8 @@ app.post("/mydata", (req, res) => {
   }
 });
 
-app.listen({ port }, () => {
+app.listen(process.env.PORT || { port }, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+module.exports = app;
